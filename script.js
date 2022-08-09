@@ -1,6 +1,9 @@
+console.log('v1.0.1');
+console.log('whats new: \n Fixed bug involving removing just the words');
+
 let badList = [];
 let final = '';
-let word = '';
+let rgx = '';
 
 function enter() {
     if (badList.length < 1 || document.getElementById('input').value == '') {
@@ -8,21 +11,29 @@ function enter() {
     } else {
         for (var i = 0; i < badList.length; i++) {
             if (document.getElementById('selectFilter').value == 1) {
-                word = badList[i];
-            } else if (document.getElementById('selectFilter').value == 2) {
-                if (word == '') {
-                    word = `([^\\s]+${badList[i]}[^\\s]+|${badList[i]}[^\\s]+|[^\\s]+${badList[i]}|${badList[i]})(\\s|)`;
+                if (rgx == '') {
+                    rgx = badList[i];
                 } else {
-                    word = `(${word}|[^\\s]+${badList[i]}[^\\s]+|${badList[i]}[^\\s]+|[^\\s]+${badList[i]}|${badList[i]})(\\s|)`;
+                    rgx = `${rgx}|${badList[i]}`;
+                }
+            } else if (document.getElementById('selectFilter').value == 2) {
+                if (rgx == '') {
+                    rgx = `([^\\s]+${badList[i]}[^\\s]+|${badList[i]}[^\\s]+|[^\\s]+${badList[i]}|${badList[i]})(\\s|)`;
+                } else {
+                    rgx = `(${rgx}|[^\\s]+${badList[i]}[^\\s]+|${badList[i]}[^\\s]+|[^\\s]+${badList[i]}|${badList[i]})(\\s|)`;
                 }
             }
         }
 
-        var rgx = new RegExp(word, 'gi');
-        final = document.getElementById('input').value.replace(rgx, '');
+        var finalRgx = new RegExp(rgx, 'gi');
+        final = document.getElementById('input').value.replace(finalRgx, '');
         // final = final.replace(/(\n\s*\n)+/g, '\n'); // removes multi lines breaks to one line break
 
         document.getElementById('finalText').innerText = final;
+
+        if (final == '') {
+            alert('Nothing to output');
+        }
     }
 }
 
@@ -50,13 +61,13 @@ function add() {
 }
 
 function changeFilter() {
-    word = '';
+    rgx = '';
 }
 
 function copy() {
     navigator.clipboard.writeText(document.getElementById('finalText').innerText);
 
-    document.getElementById('copyB').innerText = 'copied';
+    document.getElementById('copyB').innerText = 'Copied';
 }
 
 document.getElementById("list").addEventListener("click", function (e) {
