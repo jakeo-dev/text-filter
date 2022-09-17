@@ -3,33 +3,44 @@
 
 <head>
     <meta charset='utf-8'>
-    <title>Word Filter</title>
+    <title>Text Filter</title>
     <link href='style.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap" rel="stylesheet">
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tota11y/0.1.6/tota11y.min.js" crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script> -->
 </head>
 
 <body>
 
     <div id='titleDiv' class='divs'>
-        <h4 id='title'>Word Filter</h4>
-    </div>
-
-    <div id='addDiv' class='divs topDiv'>
-        <input id='inp' class='inputs' placeholder='Enter a word to filter...' type='text'>
-        <button id='addB' class='button' onclick='add();'>Add word</button>
-    </div>
-
-    <div id='listDiv' class='divs topDiv'>
-        <ul id='list'>
-        </ul>
+        <h1 id='title'>Text Filter</h1>
     </div>
 
     <div id='filterDiv' class='divs'>
         <select id='selectFilter' onchange='changeFilter();'>
             <optgroup label='Select filter method'>
-                <option value='1'>Remove just the words</option>
-                <option value='2'>Remove the words and other words containing the word</option>
+                <option value='0'>Remove just the string</option>
+                <option value='1'>Remove all words containing the string</option>
+                <option value='2'>Remove words longer than a certain length</option>
             </optgroup>
         </select>
+    </div>
+
+    <div id='addDiv' class='divs topDiv'>
+        <input id='inp' class='inputs' placeholder='Enter a string to filter...' type='text'>
+        <button id='addB' class='button' onclick='add();'>Add string</button>
+    </div>
+
+    <div id='limDiv' class='divs topDiv'>
+        <input id='inpLim' class='inputs' placeholder='Enter a character limit...' type='number'>
+        <button id='addLim' class='button' onclick='addLim();'>Enter limit</button>
+    </div>
+
+    <div id='listDiv' class='divs topDiv'>
+        <ul id='list'>
+        </ul>
+
+        <h4 id='limit'></h4>
     </div>
 
     <div id='inputDiv' class='divs'>
