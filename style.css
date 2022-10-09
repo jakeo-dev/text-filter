@@ -1,12 +1,13 @@
 body {
-  font-size: 20px;
-  padding: 0;
+  background-color: #f0f4fa;
+  text-align: center;
   margin: 0;
   font-family: "Lexend Deca", sans-serif;
 }
 
 #title {
   font-size: 35px;
+  color: #252627;
   font-weight: bold;
   margin: 30px;
   -webkit-touch-callout: none; /* iOS Safari */
@@ -46,11 +47,10 @@ li:hover {
 .inputs,
 #selectFilter {
   font-size: 18px;
-  background-color: #e7e7e7;
-  color: black;
-  box-sizing: border-box;
-  border: 3px solid #bdbdbd;
-  border-radius: 4px;
+  color: #252627;
+  background-color: #d9dee6;
+  border: 2.5px solid #a5a8ad;
+  border-radius: 5px;
   padding: 12px 20px;
   margin-left: 10px;
   -webkit-touch-callout: none; /* iOS Safari */
@@ -65,7 +65,7 @@ li:hover {
 .button:hover,
 .inputs:hover,
 #selectFilter:hover {
-  background-color: #dbdbdb;
+  background-color: #cad0d6;
 }
 
 .inputs {

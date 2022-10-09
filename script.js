@@ -1,5 +1,5 @@
-console.log('v1.0.2');
-console.log('whats new: \n Added filter to remove words above a certain length');
+console.log('v1.0.3');
+console.log('whats new: \n Design improvements');
 
 let badList = [];
 let final = '';
@@ -31,6 +31,7 @@ function enter() {
 
             regex();
         }
+
     } else if (filter === 2) {
         if (longLim == '' || longLim == undefined) {
             alert('Enter a character limit');
