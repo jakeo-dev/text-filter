@@ -1,5 +1,5 @@
-console.log('v1.0.3');
-console.log('whats new: \n Design improvements');
+console.log('v1.0.4');
+console.log('whats new: \n Minor design improvements');
 
 let badList = [];
 let final = '';
