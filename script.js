@@ -1,5 +1,5 @@
-console.log('v1.0.4');
-console.log('whats new: \n Minor design improvements');
+console.log('v1.0.5');
+console.log('whats new: \n Design improvements');
 
 let badList = [];
 let final = '';
@@ -62,10 +62,13 @@ function add() {
         var inputValue = document.getElementById('inp').value;
         var t = document.createTextNode(inputValue);
         li.appendChild(t);
+        li.classList.add('text-lg');
+        li.classList.add('hover:line-through');
+        li.classList.add('cursor-pointer');
         document.getElementById('list').appendChild(li);
 
-        document.getElementById('listDiv').style.display = 'flex';
-        document.getElementById('addDiv').style.marginBottom = '15px';
+        document.getElementById('listDiv').classList.remove('hidden');
+        document.getElementById('listDiv').classList.add('block');
 
         document.getElementById('inp').value = '';
 
@@ -86,8 +89,8 @@ function addLim() {
         longLim = document.getElementById('inpLim').value;
         document.getElementById('limit').innerText = longLim + ' characters maximum';
 
-        document.getElementById('listDiv').style.display = 'flex';
-        document.getElementById('limDiv').style.marginBottom = '15px';
+        document.getElementById('listDiv').classList.remove('hidden');
+        document.getElementById('listDiv').classList.add('block');
 
         document.getElementById('inpLim').value = '';
     }
@@ -97,15 +100,27 @@ function changeFilter() {
     filter = selectFilter.selectedIndex;
 
     if (filter === 2) {
-        document.getElementById('limDiv').style.display = 'flex';
-        document.getElementById('addDiv').style.display = 'none';
-        document.getElementById('list').style.display = 'none';
-        document.getElementById('limit').style.display = 'block';
+        document.getElementById('limDiv').classList.add('flex');
+        document.getElementById('limDiv').classList.remove('hidden');
+        document.getElementById('addDiv').classList.remove('flex');
+        document.getElementById('addDiv').classList.add('hidden');
+        document.getElementById('list').classList.remove('flex');
+        document.getElementById('list').classList.add('hidden');
+        document.getElementById('listDiv').classList.remove('block');
+        document.getElementById('listDiv').classList.add('hidden');
+        document.getElementById('limit').classList.add('flex');
+        document.getElementById('limit').classList.remove('hidden');
     } else {
-        document.getElementById('limDiv').style.display = 'none';
-        document.getElementById('addDiv').style.display = 'flex';
-        document.getElementById('list').style.display = 'block';
-        document.getElementById('limit').style.display = 'none';
+        document.getElementById('limDiv').classList.remove('flex');
+        document.getElementById('limDiv').classList.add('hidden');
+        document.getElementById('addDiv').classList.add('flex');
+        document.getElementById('addDiv').classList.remove('hidden');
+        document.getElementById('list').classList.add('block');
+        document.getElementById('list').classList.remove('hidden');
+        document.getElementById('listDiv').classList.remove('hidden');
+        document.getElementById('listDiv').classList.add('block');
+        document.getElementById('limit').classList.remove('flex');
+        document.getElementById('limit').classList.add('hidden');
     }
 
     rgx = '';
@@ -116,7 +131,7 @@ window.onload = changeFilter;
 function copy() {
     navigator.clipboard.writeText(document.getElementById('finalText').innerText);
 
-    document.getElementById('copyB').innerText = 'Copied';
+    document.getElementById('copyB').innerText = 'Copied!';
 }
 
 document.getElementById("list").addEventListener("click", function (e) {
@@ -131,8 +146,7 @@ document.getElementById("list").addEventListener("click", function (e) {
     }
 
     if (badList.length < 1) {
-        document.getElementById('listDiv').style.display = 'none';
-        document.getElementById('addDiv').style.marginBottom = '30px';
+        document.getElementById('listDiv').classList.add('hidden');
     }
 });
 

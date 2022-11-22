@@ -14,12 +14,16 @@
     <meta name='theme-color' content='#878787'>
 </head>
 
-<body>
+<body class='bg-slate-200 block text-slate-900 p-24 px-6 lg:px-40 xl:px-96 font-LexendDeca'>
 
-    <h1 id='title'>Text Filter</h1>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
 
-    <div id='filterDiv' class='divs'>
-        <select id='selectFilter' onchange='changeFilter();'>
+    <div class='w-full mb-6'>
+        <h1 class='bg-slate-800 text-4xl text-slate-200 rounded-md p-4'>Text Filter</h1>
+    </div>
+
+    <div class='w-full mb-3'>
+        <select class='button w-full' id='selectFilter' onchange='changeFilter();'>
             <optgroup label='Select filter method'>
                 <option value='0'>Remove just the string</option>
                 <option value='1'>Remove all words containing the string</option>
@@ -28,31 +32,34 @@
         </select>
     </div>
 
-    <div id='addDiv' class='divs topDiv'>
-        <input id='inp' class='inputs' placeholder='Enter a string to filter...' type='text'>
-        <button id='addB' class='button' onclick='add();'>Add string</button>
+    <div id='addDiv' class='flex w-full mb-3'>
+        <input id='inp' class='input' placeholder='Enter a string to filter...' type='text'>
+        <button id='addB' class='button whitespace-nowrap ml-3' onclick='add();'>Add string</button>
     </div>
 
-    <div id='limDiv' class='divs topDiv'>
-        <input id='inpLim' class='inputs' placeholder='Enter a character limit...' type='number'>
-        <button id='addLim' class='button' onclick='addLim();'>Enter limit</button>
+    <div id='limDiv' class='hidden w-full mb-3'>
+        <input id='inpLim' class='input' placeholder='Enter a character limit...' type='number'>
+        <button id='addLim' class='button whitespace-nowrap ml-3' onclick='addLim();'>Enter limit</button>
     </div>
 
-    <div id='listDiv' class='divs topDiv'>
-        <ul id='list'>
+    <div id='listDiv' class='w-full mb-3'>
+        <ul id='list' class='list-disc ml-6'>
         </ul>
 
-        <h4 id='limit'></h4>
+        <h2 id='limit' class='text-lg'></h2>
     </div>
 
-    <div id='inputDiv' class='divs'>
-        <textarea id='input' class='inputs' placeholder='Enter text to be filtered...' rows='5' cols='50'></textarea>
-        <button id='enterB' class='button' onclick='enter();'>Enter</button>
-        <button id='copyB' class='button' onclick='copy();'>Copy</button>
+    <div class='flex w-full mb-6'>
+        <textarea id='input' class='input flex-1' placeholder='Enter text to be filtered...' rows='2'
+            cols='50'></textarea>
+        <div class='block ml-3'>
+            <button class='button w-full mb-3' onclick='enter();'>Enter</button>
+            <button id='copyB' class='button w-full' onclick='copy();'>Copy</button>
+        </div>
     </div>
 
-    <div id='textDiv' class='divs'>
-        <h2 id='finalText'></h2>
+    <div>
+        <h3 id='finalText' class='text-xl'></h3>
     </div>
 
 </body>

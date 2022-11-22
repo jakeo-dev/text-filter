@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .button {
+    @apply bg-slate-300 text-xl border-slate-400 border-[2.5px] rounded-md hover:bg-slate-350 transition-all p-2 px-4;
+  }
+
+  .input {
+    @apply bg-transparent w-full text-xl border-slate-400 hover:border-slate-500 focus:border-slate-500 transition-all border-b-[2.5px] outline-none p-2;
+  }
+}
