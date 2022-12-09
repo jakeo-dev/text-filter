@@ -1,5 +1,5 @@
-console.log('v1.0.5');
-console.log('whats new: \n Design improvements');
+/* console.log('v1.0.5');
+console.log('whats new: \n Design improvements'); */
 
 let badList = [];
 let final = '';
@@ -62,9 +62,7 @@ function add() {
         var inputValue = document.getElementById('inp').value;
         var t = document.createTextNode(inputValue);
         li.appendChild(t);
-        li.classList.add('text-lg');
-        li.classList.add('hover:line-through');
-        li.classList.add('cursor-pointer');
+        li.className = 'text-lg hover:line-through cursor-pointer';
         document.getElementById('list').appendChild(li);
 
         document.getElementById('listDiv').classList.remove('hidden');
