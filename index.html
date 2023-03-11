@@ -13,17 +13,17 @@
     <meta property='og:title' content='Text Filter'>
     <meta property='og:description' content='Filter strings from text in a number of different ways'>
     <meta name='theme-color' content='#878787'>
-</head>
-
-<body class='bg-slate-200 block text-slate-900 p-24 px-6 lg:px-40 xl:px-96 font-LexendDeca'>
 
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+</head>
+
+<body class='bg-gray-300 block text-gray-900 p-24 px-6 lg:px-40 xl:px-64 font-LexendDeca'>
 
     <div class='w-full mb-6'>
-        <h1 class='bg-slate-800 text-4xl text-slate-200 rounded-md p-5'>Text Filter</h1>
+        <h1 class='bg-gray-800 text-4xl text-gray-200 rounded-md p-6'>Text Filter</h1>
     </div>
 
-    <div class='w-full mb-3'>
+    <div class='w-full bg-gray-800 rounded-t-md p-6'>
         <select class='button w-full' id='selectFilter' onchange='changeFilter();'>
             <optgroup label='Select filter method'>
                 <option value='0'>Remove just the string</option>
@@ -33,35 +33,50 @@
         </select>
     </div>
 
-    <div id='addDiv' class='flex w-full mb-3'>
-        <input id='inp' class='input' placeholder='Enter a string to filter...' type='text'>
-        <button id='addB' class='button whitespace-nowrap ml-3' onclick='add();'>Add string</button>
-    </div>
+    <div class='border-y-2 border-gray-700'></div>
 
-    <div id='limDiv' class='hidden w-full mb-3'>
-        <input id='inpLim' class='input' placeholder='Enter a character limit...' type='number'>
-        <button id='addLim' class='button whitespace-nowrap ml-3' onclick='addLim();'>Enter limit</button>
-    </div>
+    <div class='flex bg-gray-800 rounded-b-md'>
 
-    <div id='listDiv' class='w-full mb-3'>
-        <ul id='list' class='list-disc ml-6'>
-        </ul>
+        <div class='p-6'>
 
-        <h2 id='limit' class='text-lg'></h2>
-    </div>
+            <div id='addDiv' class='flex w-full mb-3'>
+                <input id='inp' class='input' placeholder='Enter a string to filter...' type='text'>
+                <button id='addB' class='button whitespace-nowrap ml-3' onclick='add();'>Add string</button>
+            </div>
 
-    <div class='flex w-full mb-6'>
-        <textarea id='input' class='input flex-1' placeholder='Enter text to be filtered...' rows='2'
-            cols='50'></textarea>
-        <div class='block ml-3'>
-            <button class='button w-full mb-3' onclick='enter();'>Enter</button>
-            <button id='copyB' class='button w-full' onclick='copy();'>Copy</button>
+            <div id='limDiv' class='hidden w-full mb-3'>
+                <input id='inpLim' class='input' placeholder='Enter a character limit...' type='number'>
+                <button id='addLim' class='button whitespace-nowrap ml-3' onclick='addLim();'>Enter limit</button>
+            </div>
+
+            <div id='listDiv' class='w-full mb-3'>
+                <ul id='list' class='text-gray-200 list-disc ml-6'>
+                </ul>
+
+                <h2 id='limit' class='text-lg'></h2>
+            </div>
+
         </div>
+
+        <div class='border-x-2 border-gray-700'></div>
+
+        <div class='p-6'>
+
+            <div class='flex w-full'>
+                <textarea id='input' class='input flex-1' placeholder='Enter text to be filtered...' rows='2'
+                    cols='50'></textarea>
+
+                <div class='block ml-3'>
+                    <button class='button mb-3' onclick='enter();'>Enter</button>
+                    <button id='copyB' class='button ' onclick='copy();'>Copy</button>
+                </div>
+            </div>
+
+        </div>
+
     </div>
 
-    <div>
-        <h3 id='finalText' class='text-xl'></h3>
-    </div>
+    <h3 id='finalText' class='text-2xl p-12'></h3>
 
 </body>
 

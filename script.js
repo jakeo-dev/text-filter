@@ -66,7 +66,6 @@ function add() {
         document.getElementById('list').appendChild(li);
 
         document.getElementById('listDiv').classList.remove('hidden');
-        document.getElementById('listDiv').classList.add('block');
 
         document.getElementById('inp').value = '';
 
@@ -88,7 +87,6 @@ function addLim() {
         document.getElementById('limit').innerText = longLim + ' characters maximum';
 
         document.getElementById('listDiv').classList.remove('hidden');
-        document.getElementById('listDiv').classList.add('block');
 
         document.getElementById('inpLim').value = '';
     }
@@ -104,7 +102,6 @@ function changeFilter() {
         document.getElementById('addDiv').classList.add('hidden');
         document.getElementById('list').classList.remove('flex');
         document.getElementById('list').classList.add('hidden');
-        document.getElementById('listDiv').classList.remove('block');
         document.getElementById('listDiv').classList.add('hidden');
         document.getElementById('limit').classList.add('flex');
         document.getElementById('limit').classList.remove('hidden');
@@ -113,10 +110,10 @@ function changeFilter() {
         document.getElementById('limDiv').classList.add('hidden');
         document.getElementById('addDiv').classList.add('flex');
         document.getElementById('addDiv').classList.remove('hidden');
-        document.getElementById('list').classList.add('block');
-        document.getElementById('list').classList.remove('hidden');
-        document.getElementById('listDiv').classList.remove('hidden');
-        document.getElementById('listDiv').classList.add('block');
+        if (!badList == null) {
+            document.getElementById('list').classList.remove('hidden');
+            document.getElementById('listDiv').classList.remove('hidden');
+        }
         document.getElementById('limit').classList.remove('flex');
         document.getElementById('limit').classList.add('hidden');
     }
