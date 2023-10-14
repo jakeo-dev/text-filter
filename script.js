@@ -1,6 +1,3 @@
-/* console.log('v1.0.5');
-console.log('whats new: \n Design improvements'); */
-
 let badList = [];
 let final = '';
 let rgx = '';
