@@ -689,6 +689,14 @@ video {
   padding-right: 2rem;
 }
 
+.pt-12 {
+  padding-top: 3rem;
+}
+
+.pt-8 {
+  padding-top: 2rem;
+}
+
 .font-LexendDeca {
   font-family: Lexend Deca, sans-serif;
 }
